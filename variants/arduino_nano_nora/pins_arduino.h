@@ -21,6 +21,9 @@
 
 // primary pin names
 
+#if defined(BOARD_HAS_PIN_REMAP) && !defined(BOARD_USES_HW_GPIO_NUMBERS)
+
+// Arduino style definitions (API uses Dx)
 static constexpr uint8_t D0         = 0; // also RX
 static constexpr uint8_t D1         = 1; // also TX
 static constexpr uint8_t D2         = 2;
@@ -47,6 +50,38 @@ static constexpr uint8_t A4         = 21; // also SDA
 static constexpr uint8_t A5         = 22; // also SCL
 static constexpr uint8_t A6         = 23;
 static constexpr uint8_t A7         = 24;
+
+#else
+
+// ESP32-style definitions (API uses GPIOx)
+static constexpr uint8_t D0         = 44; // also RX
+static constexpr uint8_t D1         = 43; // also TX
+static constexpr uint8_t D2         = 5;
+static constexpr uint8_t D3         = 6;  // also CTS
+static constexpr uint8_t D4         = 7;  // also DSR
+static constexpr uint8_t D5         = 8;
+static constexpr uint8_t D6         = 9;
+static constexpr uint8_t D7         = 10;
+static constexpr uint8_t D8         = 17;
+static constexpr uint8_t D9         = 18;
+static constexpr uint8_t D10        = 21; // also SS
+static constexpr uint8_t D11        = 38; // also MOSI
+static constexpr uint8_t D12        = 47; // also MISO
+static constexpr uint8_t D13        = 48; // also SCK, LED_BUILTIN
+static constexpr uint8_t LED_RED    = 46;
+static constexpr uint8_t LED_GREEN  = 0;
+static constexpr uint8_t LED_BLUE   = 45; // also RTS
+
+static constexpr uint8_t A0         = 1;  // also DTR
+static constexpr uint8_t A1         = 2;
+static constexpr uint8_t A2         = 3;
+static constexpr uint8_t A3         = 4;
+static constexpr uint8_t A4         = 11; // also SDA
+static constexpr uint8_t A5         = 12; // also SCL
+static constexpr uint8_t A6         = 13;
+static constexpr uint8_t A7         = 14;
+
+#endif
 
 // alternate pin functions
 
