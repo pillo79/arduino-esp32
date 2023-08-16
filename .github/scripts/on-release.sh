@@ -70,6 +70,7 @@ function git_safe_upload_asset(){
         >&2 echo "ERROR: Failed to upload '$name' ($?)"
         return 1
     fi
+    echo $file/$upload_res
     up_size=`echo "$upload_res" | jq -r '.size'`
     if [ $up_size -ne $size ]; then
         >&2 echo "ERROR: Uploaded size does not match! $up_size != $size"
