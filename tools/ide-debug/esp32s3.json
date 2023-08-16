@@ -8,10 +8,11 @@
 		"monitor reset halt",
 		"monitor gdb_sync",
 		"thb setup",
-		"c"
+		"interrupt"
 	],
 	"overrideRestartCommands":[
 		"monitor reset halt",
-		"monitor gdb_sync"
+		"monitor gdb_sync",
+		"interrupt"
 	]
 }
