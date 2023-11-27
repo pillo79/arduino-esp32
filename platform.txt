@@ -267,6 +267,7 @@ debug.server.openocd.scripts_dir={runtime.platform.path}{pathsep}tools{pathsep}o
 debug.server.openocd.scripts.0=board{pathsep}{debug_script.{build.mcu}}
 debug.svd_file={runtime.platform.path}{pathsep}tools{pathsep}ide-debug{pathsep}svd{pathsep}{build.mcu}.svd
 
+debug.cortex-debug.custom.objdumpPath={compiler.path}{compiler.prefix}objdump{binext}
 debug.cortex-debug.custom.request=attach
 debug.additional_config=debug_config.{build.mcu}
 
